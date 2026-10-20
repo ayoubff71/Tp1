@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex4</title>
+</head>
+<body>
+    <h2>entrer le premier temps:</h2>
+    <form>
+        <label>heure(s)</label>
+        <input type="text" name="hour">
+        <label>minute(s)</label>
+        <input type="text" name="min">
+        <label>seconde(s)</label>
+        <input type="text" name="sec">
+    </form>
+
+    <h2>entrer le deuxieme temps:</h2>
+    <form>
+        <label>heure(s)</label>
+        <input type="text" name="hour">
+        <label>minute(s)</label>
+        <input type="text" name="min">
+        <label>seconde(s)</label>
+        <input type="text" name="sec">
+    </form>
+
+    <h2>entrer le troisieme temps:</h2>
+    <form>
+        <label>heure(s)</label>
+        <input type="text" name="hour">
+        <label>minute(s)</label>
+        <input type="text" name="min">
+        <label>seconde(s)</label>
+        <input type="text" name="sec">
+    </form>
+    <h2>le total des trois temps:</h2>
+    <form>
+        <label>jour(s)</label>
+        <input type="text" name="day">
+        <label>heure(s)</label>
+        <input type="text" name="totalH" value="">
+        <label>minute(s)</label>
+        <input type="text" name="totalM">
+        <label>seconde(s)</label>
+        <input type="text" name="totalS">
+    </form>
+    <button type="button" id="sub">submit</button>
+    <button type="button" id="init">effacer</button>
+    <script>
+        let init = document.getElementById("init");
+        let totalH = document.getElementsByName("totalH")[0];
+        let totalM = document.getElementsByName("totalM")[0];
+        let totalS = document.getElementsByName("totalS")[0];
+        let days = document.getElementsByName("day")[0];
+        init.onclick = function(){
+            let inputs = document.querySelectorAll(`input`);
+            for(let input of inputs){
+                input.value = "";
+            }
+        }
+        let sub = document.getElementById("sub");
+        sub.onclick = function(){
+            let heures = document.getElementsByName("hour");
+            let minutes = document.getElementsByName("min");
+            let secondes = document.getElementsByName("sec");
+            let totalSeconds = 0;
+            let i;
+            for(i=0;i<3;i++){
+                totalSeconds += Number(heures[i].value) * 3600;
+                totalSeconds += Number(minutes[i].value) * 60;
+                totalSeconds += Number(secondes[i].value);
+            }
+
+            let totalDay = Math.floor(totalSeconds / 86400);
+            totalSeconds %= 86400;
+            let totalHour = Math.floor(totalSeconds / 3600);
+            totalSeconds %= 3600;
+            let totalMinute = Math.floor(totalSeconds / 60);
+            totalSeconds %= 60; 
+
+            days.value = totalDay;
+            totalH.value = totalHour;
+            totalM.value = totalMinute;
+            totalS.value = totalSeconds;
+            
+        }
+        
+    </script>
+</body>
+</html>

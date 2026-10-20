@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <h1>QCM JavaScript</h1>
+
+    <form id="qcm">
+
+        <div class="question">
+            <h3>1. Quels sont des langages utilisés dans le développement web ?</h3>
+            <label><input type="checkbox" name="q1" value="HTML"> HTML</label>
+            <label><input type="checkbox" name="q1" value="CSS"> CSS</label>
+            <label><input type="checkbox" name="q1" value="JavaScript"> JavaScript</label>
+            <label><input type="checkbox" name="q1" value="Python"> Python</label>
+        </div>
+
+        <div class="question">
+            <h3>2. Lesquels sont des types primitifs JavaScript ?</h3>
+            <label><input type="checkbox" name="q2" value="string"> string</label>
+            <label><input type="checkbox" name="q2" value="number"> number</label>
+            <label><input type="checkbox" name="q2" value="boolean"> boolean</label>
+            <label><input type="checkbox" name="q2" value="HTML"> HTML</label>
+        </div>
+
+        <div class="question">
+            <h3>3. Lesquelles sont des méthodes JavaScript ?</h3>
+            <label><input type="checkbox" name="q3" value="forEach"> forEach</label>
+            <label><input type="checkbox" name="q3" value="map"> map</label>
+            <label><input type="checkbox" name="q3" value="filter"> filter</label>
+            <label><input type="checkbox" name="q3" value="HTML"> HTML</label>
+        </div>
+
+        <div class="question">
+            <h3>4. Quelle méthode sélectionne un élément par son ID ?</h3>
+            <label><input type="radio" name="q4" value="getElementById"> getElementById</label>
+            <label><input type="radio" name="q4" value="getElementsByClassName"> getElementsByClassName</label>
+            <label><input type="radio" name="q4" value="querySelectorAll"> querySelectorAll</label>
+            <label><input type="radio" name="q4" value="forEach"> forEach</label>
+        </div>
+
+        <div class="question">
+            <h3>5. Quel langage programme le comportement d'une page web ?</h3>
+            <label><input type="radio" name="q5" value="HTML"> HTML</label>
+            <label><input type="radio" name="q5" value="CSS"> CSS</label>
+            <label><input type="radio" name="q5" value="JavaScript"> JavaScript</label>
+            <label><input type="radio" name="q5" value="SQL"> SQL</label>
+        </div>
+
+        <div class="buttons">
+            <button type="button" id="initialiser">Initialiser</button>
+            <button type="button" id="corrige">Afficher le corrigé</button>
+            <button type="button" id="resultat">Afficher le résultat</button>
+        </div>
+
+    </form>
+
+    <script src="index.js" defer></script>
+</body>
+</html>

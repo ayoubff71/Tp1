@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+<body>
+    <h1>Verifier l'email:</h1>
+    <form>
+        <label for="email">E-mail</label>
+        <input type="text" id="email"><br><br>
+        <button type="button" id="btn">Verifier</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        let btn = document.getElementById("btn");
+        let result = document.getElementById("result");
+        btn.onclick = function(){
+            
+            let email = document.getElementById("email").value;
+            if(!email.includes("@")){
+                result.textContent = "your email isn't valid!";
+                result.style.color = "red";
+            }
+            else{
+                let bef = email.indexOf("@");
+                let aft = email.indexOf("@") +1;
+                let firsPart = email.slice( 0 , bef);
+                let secondPart = email.slice(aft);
+            if(firsPart.length === 0 || firsPart.includes(" ") ){
+                result.textContent = "your email should contain at least one character before @ and no spaces";
+                result.style.color = "red";
+            }
+            else if(!secondPart.includes(".")){
+                result.textContent = "your email should include '.'!";
+                result.style.color = "red";
+            }
+            else{
+                result.textContent = "your email valid!";
+                result.style.color = "green";
+            }
+            }
+            
+            
+        }
+       
+    </script>
+</body>
+</html>
